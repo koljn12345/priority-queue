@@ -72,7 +72,8 @@ describe('MaxHeap', () => {
 			nodes.forEach(node => {
 				h.insertNode(node);
 			});
-
+			
+		
 			expect(h.root).to.equal(nodes[0]);
 			expect(h.root.left).to.equal(nodes[1]);
 			expect(h.root.right).to.equal(nodes[2]);

@@ -118,7 +118,7 @@ describe('Node', () => {
 
 			expect(() => {
 				node.swapWithParent();
-			}).not.to.throw();
+			}).not.to.throw(); 
 		});
 
 		it('updates parent.parent', () => {
