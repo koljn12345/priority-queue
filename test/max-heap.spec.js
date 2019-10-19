@@ -14,7 +14,7 @@ describe('MaxHeap', () => {
 		});
 	});
 
-	describe('#push', () => {
+	describe('#push', () => { 
 		let h;
 
 		beforeEach(() => {

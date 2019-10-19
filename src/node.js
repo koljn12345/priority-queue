@@ -23,12 +23,45 @@ class Node {
 		if(this.parent) this.parent.removeChild(this);
 	}
 
-	swapWithParent() {
-		let tempNode;
-		let tempParent;
-		if(this.parent) {
-			this.parent=this;
+	swapWithParent() {		
+		if (this.parent) {
+			let parent=this.parent;
+			let left=this.left;
+			let right=this.right;			
+			if (parent.right==this) {
+				this.right=parent;
+				this.left=parent.left;
+				if (this.left) {
+					this.left.parent=this;
+				}
+			}			
+			if (parent.left==this) {
+				this.left=parent;
+				this.right=parent.right;
+				if (this.right) {
+					this.right.parent=this;
+				}
+			}			
+			this.parent=parent.parent;
+			parent.parent=this;
+			parent.left=left;
+			parent.right=right;			
+			if (left) {
+				left.parent=parent;
+			}			
+			if (right) {
+				right.parent=parent;
+			}			
+			if (this.parent) {
+				if (this.parent.left==parent) {
+					this.parent.left=this;
+				}			
+				if (this.parent.right==parent) {
+					this.parent.right=this;
+				}
+			}
 		}
+	  
 	}
 }
 
